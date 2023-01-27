@@ -30,3 +30,13 @@ export const createUser = async(postData)=>{
         throw new Error(err.response)
      }
 }
+
+
+export const deletePost = async(id)=>{
+    try{
+        let {data} = await axios.delete(`http://localhost:5000/api/post/${id}`)
+        return data
+    }catch(err){
+        throw new Error("Unable to delete  post data")
+    }
+}
